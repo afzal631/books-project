@@ -38,51 +38,49 @@ function Buybooks() {
       <br />
       <div
         style={{
-          position: "relative",
           textAlign: "center",
         }}
       >
-        <div style={{ margin: "8rem" }}>
-          <div style={{ position: "relative", textAlign: "center" }}>
-            <h3>Search book name</h3>
-            <TextField
-              id="outlined-basic"
-              variant="outlined"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              style={{ padding: "0px 0rem 5rem 0px" }}
-            />
-          </div>
-          <Grid
-            container
-            spacing={4}
-            style={{ gap: "20px", justifyContent: "center" }}
-          >
-            {service
-              .filter((content) => {
-                return search.toLowerCase() === ""
-                  ? content
-                  : content.title.toLowerCase().includes(search.toLowerCase());
-              })
-              .map((content) => (
-                <Grid
-                  item
-                  xs={12}
-                  lg={3}
-                  sm={6}
-                  md={4}
-                  style={{
-                    margin: "0",
-                    padding: "0",
-                    display: "grid",
-                  }}
-                >
+        <Grid item xs={12} lg={12} sm={12} style={{ textAlign: "center" }}>
+          <h3>Search book name</h3>
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            style={{ padding: "0px 0rem 5rem 0px" }}
+          />
+        </Grid>
+        <Grid
+          xs={12}
+          sm={12}
+          container
+          style={{ margin: "0" }}
+          rowSpacing={1}
+          // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        >
+          {service
+            .filter((content) => {
+              return search.toLowerCase() === ""
+                ? content
+                : content.title.toLowerCase().includes(search.toLowerCase());
+            })
+            .map((content) => (
+              <Grid
+                item
+                xs={12}
+                lg={3}
+                md={6}
+                sm={12}
+                style={{
+                  margin: "0",
+                  padding: "2rem",
+                  justifyContent: "center",
+                }}
+              >
+                <div>
                   <Card
-                    sx={{ maxWidth: 350 }}
-                    lg={3}
-                    xs={12}
-                    sm={6}
-                    md={4}
+                    // sx={{ maxWidth: 350 }}
                     style={{
                       border: "1px solid",
                     }}
@@ -162,10 +160,10 @@ function Buybooks() {
                       </Button>
                     </CardActions>
                   </Card>
-                </Grid>
-              ))}
-          </Grid>
-        </div>
+                </div>
+              </Grid>
+            ))}
+        </Grid>
       </div>
     </>
   );
