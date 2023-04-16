@@ -35,7 +35,6 @@ function Buybooks() {
   // var content = JSON.stringify(service, null, 2);
   return (
     <>
-      {/* <button onClick={apiGet}>fetch API</button> */}
       <br />
       <div
         style={{
@@ -45,7 +44,7 @@ function Buybooks() {
       >
         <div style={{ margin: "8rem" }}>
           <div style={{ position: "relative", textAlign: "center" }}>
-            <h3>Search book title</h3>
+            <h3>Search book name</h3>
             <TextField
               id="outlined-basic"
               variant="outlined"
